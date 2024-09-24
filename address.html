@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address page</title>
+    <style>
+
+
+* {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+      }
+      header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 2px 2px 12px 0.7px rgb(200, 198, 198);
+      }
+      header img {
+        width: 10%;
+        margin: 0px 15%;
+      }
+      header div {
+        font-size: 11px;
+        color: grey;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+      header div div:nth-child(odd) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        border-radius: 50%;
+        border: 3px solid rgb(225, 221, 221);
+      }
+
+      #curr div {
+        color: royalblue !important;
+      }
+      #curr div:nth-child(1) {
+        border: 3px solid royalblue;
+      }
+      hr {
+        width: 5%;
+        position: relative;
+        top: -5px;
+        height: 3px;
+        background-color: rgb(225, 221, 221);
+        box-shadow: none;
+        border: none;
+      }
+      main {
+        display: flex;
+        /* flex: 1; */
+        margin-top: 20px;
+        justify-content: center;
+      }
+      section:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 20px;
+      }
+      section .seller {
+        padding: 10px 5px;
+        border: 1px solid rgb(225, 221, 221);
+        border-end-end-radius: 5px;
+        border-end-start-radius: px;
+        border-top: none;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-around;
+      }
+      section .product {
+        padding: 10px;
+        border: 1px solid rgb(225, 221, 221);
+        border-start-end-radius: 5px;
+        border-start-start-radius: 5px;
+        display: flex;
+        gap: 5px;
+        line-height: 25px;
+        width: 100%;
+      }
+      section .product img {
+        height: 70px;
+        padding: 5px;
+        border: 2px solid rgb(225, 221, 221);
+        border-radius: 5px;
+      }
+      section .product p {
+        font-size: 14px;
+        color: rgb(101, 101, 101);
+      }
+      section .product p:nth-child(1) {
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        width: 210px;
+      }
+      section .product p:nth-child(1) span {
+        color: #f43397;
+      }
+      section .product p:nth-last-child(1) {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-weight: bold;
+        padding: 10px;
+      }
+      section .product p:nth-last-child(1) span {
+        font-size: 22px;
+      }
+      section:nth-last-child(1) p:nth-child(odd) {
+        font-weight: bold;
+      }
+      section:nth-last-child(1) {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin-left: 10px;
+      }
+      section:nth-last-child(1) img {
+        margin-top: 10px;
+        height: 120px;
+      }
+      section:nth-last-child(1) p {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      section:nth-last-child(1) button {
+        padding: 10px;
+        background-color: rgb(159, 32, 137);
+        color: white;
+        font-size: larger;
+        border: none;
+        border-radius: 5px;
+      }
+      .divider {
+        height: 420px;
+        width: 2px;
+        background-color: rgb(200, 198, 198);
+      }
+      .mobile-only {
+        display: none;
+      }
+
+      @media screen and (max-width: 680px) {
+        main {
+          flex-direction: column;
+        }
+        .divider {
+          display: none;
+        }
+        header img {
+          display: none;
+        }
+        header {
+          padding: 10px;
+          justify-content: center;
+          width: 100vw;
+        }
+        .mobile-only.header {
+          display: block;
+          font-size: 14px;
+          color: rgb(154, 154, 154);
+          padding: 10px;
+        }
+        hr {
+          width: 20%;
+        }
+        .mobile-hid {
+          display: none;
+        }
+        section .product p:nth-child(1) {
+          width: 120%;
+        }
+        section:nth-child(1) {
+          width: 100%;
+          margin: auto;
+        }
+        main {
+          margin-top: 0px;
+          background-color: rgb(225, 243, 254);
+        }
+        main section div {
+          background-color: white;
+        }
+        .mobile-only {
+          display: block;
+        }
+        section:nth-last-child(1) {
+          margin: 10px 0px;
+          width: 100%;
+          margin-left: 0px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: white;
+        }
+        section:nth-last-child(1) img {
+          padding-top: 10px;
+          background-color: rgb(225, 243, 254);
+          margin-bottom: 80px;
+        }
+        .wishlist {
+          padding: 10px 20px;
+          display: flex;
+          justify-content: space-between;
+          font-weight: bold;
+          border: 1px solid rgb(225, 221, 221);
+          background-color: white;
+          margin-top: 10px;
+        }
+        .checkout-2 {
+          position: fixed;
+          display: flex;
+          width: 100%;
+          bottom: 0px;
+          align-items: center;
+          justify-content: space-around;
+        }
+        .checkout-1 {
+          position: fixed;
+          background-color: white;
+          width: 100%;
+          bottom: 60px;
+          padding-left: 10px;
+          font-size: 12px;
+          background-color: rgb(231, 240, 247);
+        }
+        .checkout-1 span {
+          margin: auto;
+          font-weight: 100;
+        }
+        .checkout-2 button {
+          width: 40%;
+        }
+        .checkout-2 div {
+          line-height: 10px;
+        }
+      }
+
+      form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form select{
+    width: 450px;
+    padding: 15px;
+    padding-left: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 10px 0 rgb(0,0,0,0.25);
+    cursor: pointer;
+}
+  
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="mobile-only header">&#60; Cart</div>
+    <header>
+      <a href="shopper stop.html"><b style="margin-right: 500px;">Shopper Stop</b></a>
+      <div>
+        <a href="cartpage.html"><div>1</div>
+        <div>Cart</div></a>
+      </div>
+      <hr size="2" width="" />
+      <div class=""id="curr">
+        <a href="address.html"><div>2</div>
+        <div style="width: 10px">Address</div></a>
+      </div>
+      <hr size="2" width="5%" />
+      <div>
+        <a href="paymentpage.html"><div>3</div></a>
+        <div style="width: 10px">Payment</div>
+      </div>
+      <hr size="2" width="5%" />
+      <div>
+        <div>4</div>
+        <div style="width: 10px">Summary</div>
+      </div>
+    </header>
+    <main>
+      <section>
+
+        <span style="font-size: 50px;color: purple;"><u><center>Address</center></u></span>
+
+        <div style="margin-top: 20px;">
+            <input type="text" placeholder="Please Enter your Address" style="height: 50px;width: 500px;">
+        </div>
+
+        <form action="#">
+            <select name="" id="country" style="width: 500px;">
+                <option value="">-- Select Country --</option>
+            </select>
+            <select name="" id="state"style="width: 500px;">
+                <option value="">-- Select State --</option>
+            </select>
+            <select name="" id="city"style="width: 500px;">
+                <option value="">-- Select City --</option>
+            </select>   
+            <select name="" id="zip"style="width: 500px;">
+                <option value="">-- Select Zip --</option>
+            </select>
+
+            <button> Save</button>
+
+            <button><a href="paymentpage.html">Next</button></a>
+            
+        </form>
+        
+
+        
+      </section>
+    </main>
+  </body>
+
+
+  <script>var countrySateCityinfo = {
+    Australia: {
+        "Western Australia": {
+            Broome: ["6725", "6318", "6701"],
+            Coolgardie: ["6429", "6432"]
+        },
+        Tasmania: {
+            Hobart: ["7000", "7520"],
+            Launceston: ["7250", "7334"],
+            Burnie: ["7320", "7315"]
+        }
+    },
+    India: {
+        Gujarat: {
+            Ahmedabad: ["380004", "380001", "380002"],
+            Vadodara: ["90402", "90403", "90404"]
+        },
+        Hessen: {
+            Navsari: ["60306", "60309", "60310"],
+            Surat: ["55246", "55247", "55248", "55249"]
+        }
+    },
+
+    Canada: {
+        Alberta: {
+            Calgary: ["8033", "8333", "8035"],
+            Edmonton: ["9040", "9403", "9040"]
+        },
+        Manitoba: {
+            Brandon: ["6030", "6030"],
+            Winnipeg: ["5524", "5547", "5248"]
+        }
+    }
+    
+}
+
+window.onload = function(){
+    const selectCountry = document.getElementById('country'),
+        selectState = document.getElementById('state'),
+        selectCity = document.getElementById('city'),
+        selectZip = document.getElementById('zip'),
+        selects = document.querySelectorAll('select')
+
+        selectState.disabled = true
+        selectCity.disabled = true
+        selectZip.disabled = true
+
+        selects.forEach(select => {
+            if(select.disabled == true){
+                select.style.cursor = "auto"
+            }
+            else{
+                select.style.cursor = "pointer"
+            }
+        })
+
+        for(let country in countrySateCityinfo){
+            // console.log(country);
+            selectCountry.options[selectCountry.options.length] = new Option(country, country)
+        }
+
+
+        // country change
+        selectCountry.onchange = (e) =>{
+            
+            selectState.disabled = false
+            selectCity.disabled = true
+            selectZip.disabled = true
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+
+            selectState.length = 1
+            selectCity.length = 1
+            selectZip.length = 1
+
+            for(let state in countrySateCityinfo[e.target.value]){
+                // console.log(state);
+                selectState.options[selectState.options.length] = new Option(state, state)
+            }
+        }
+
+        // state change
+        selectState.onchange = (e) =>{
+            selectCity.disabled = false
+            selectZip.disabled = true
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+
+            selectCity.length = 1
+            selectZip.length = 1
+
+            for(let city in countrySateCityinfo[selectCountry.value][e.target.value]){
+                // console.log(city);
+                selectCity.options[selectCity.options.length] = new Option(city, city)
+            }
+        }
+
+        // change city
+        selectCity.onchange = (e) =>{
+            selectZip.disabled = false
+
+            selects.forEach(select => {
+                if(select.disabled == true){
+                    select.style.cursor = "auto"
+                }
+                else{
+                    select.style.cursor = "pointer"
+                }
+            })
+            
+            selectZip.length = 1
+
+            let zips = countrySateCityinfo[selectCountry.value][selectState.value][e.target.value]
+            
+            for(let i=0; i<zips.length; i++){
+                selectZip.options[selectZip.options.length] = new Option(zips[i], zips[i])
+            }
+        }
+}
+</script>
+</html>
